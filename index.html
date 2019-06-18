@@ -6,13 +6,33 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Redmi 6a</title>
 	<link rel="stylesheet" href="css/estilos.css">
+	<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+	<link rel="shorcut icon"type="image/x-icon" href="Images/favicon.ico">
 </head>
-<body>
-<h1>Redmi 6a</h1>
-<p>Development Page</p>
-<a href="https://www.google.com"Custom Roms></a>
-<a href="#"GSI Roms></a>
-<a href="#"Root></a>
-<a href="#"TWRP></a>
+<body background="Images/3492.jpg">
+<h1 id="Titulo">Redmi 6a</h1>
+<p id="Descripcion">Development Page</p>
+
+<nav>
+	
+		<button class="nav-button" onclick="accion()">Menú </button>
+		<a href="https://www.google.com" class="nav-enlace desaparece">Custom Roms</a>
+		<a href="Roms.html" class="nav-enlace desaparece">GSI Roms</a>
+		<a href="#" class="nav-enlace desaparece">Root</a>
+		<a href="#" class="nav-enlace desaparece">TWRP</a>	
+		<a href="https://t.me/Redmi6AOfficial" class="nav-enlace desaparece">Telegram Group</a>	
+	
+
+</nav>
+<script>
+	function accion(){
+		var ancla=document.getElementsByClassName('nav-enlace')
+		for(var i=0;i<ancla.length;i++){
+		ancla[i].classList.toggle('desaparece')
+		}
+	}
+</script>
+<img src="Images/redmi6a.jpg" alt="">
+
 </body>
 </html>	
