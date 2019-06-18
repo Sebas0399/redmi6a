@@ -1,0 +1,2 @@
+# redmi6a
+xd
