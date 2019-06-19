@@ -84,6 +84,7 @@ img{
 	color: #fff;
 	text-decoration: none;
 	border-radius: 10px;
+	display: inline;
 	
 }
 .btn-descarga:hover{

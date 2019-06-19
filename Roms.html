@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Custom ROM</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 </head>
 <body background="Images/3492.jpg">
     <h1 id="Titulo">Redmi 6a</h1>
@@ -25,16 +26,17 @@
                 <p>8. Added All Network Type Option In Preferred Network Type !</p>
                 <p>9. Some UnderHood Changes</p>
                 <a href="https://drive.google.com/file/d/18q4Bk7QRoFUKdO-bfrkiYoYO7sMdEEPo/view" class="btn-descarga">Download</a>
-                <button class="btn-descarga">Guide</button>
+                <button class="btn-descarga" onclick="guia()" id="bt1">Guide</button>
+                <div class="guide" id="guia">  
+                                                                
+                </div>
                 <div class="guide">
-                    <p class="desapar">How to Install :</p>                  
-                    <p>1. go to twrp</p>
-                    <p>2. wipe data, cache, dalvik, system</p>
-                    <p>3. flash rom</p>
-                    <p>4. flash magisk</p>
-                    <p>5. reboot</p>
-                    <p>6. flash dolby from magisk</p>
-                    <p>7. reboot</p>                                                   
+                    <h2>Credits</h2>
+                    <p>Wulan17</p>
+                    <p> Samar</p>
+                    <p>Zain Arbani</p>
+                   <p>Phhushon</p> 
+                   <p>lordutkarsh</p>
                 </div>
                 
         </div>
@@ -52,19 +54,55 @@
                 <p>7. Some Underhood Changes</p>
                 <p>8. Included Gaps</p>
                 <a href="https://drive.google.com/file/d/1ypsy60VyN_JdteZOTCJw_syqlEQtIBro/view"class="btn-descarga">Download</a>
-                <button class="btn-descarga">Guide</button>       
-        </div>
-        <div class="columna">
-            <h2>Credits</h2>
-            <p>Wulan17</p>
-            <p> Samar</p>
-            <p>Zain Arbani</p>
-           <p>Phhushon</p> 
-           <p>lordutkarsh</p>
-                   
+                <button class="btn-descarga"onclick="guia2()" id="bt2">Guide</button>
+                <div class="guide" id="guia2" onclick="guia"></div>
+                <div class="guide">
+                        <h2>Credits</h2>
+                        <p>Wulan17</p>
+                        <p> Samar</p>
+                        <p>Zain Arbani</p>
+                       <p>Phhushon</p> 
+                       <p>lordutkarsh</p>
+                    </div>       
+        </div>     
+        <script>
+            function guia(){
+            var guias=["1. Go to twrp","2. Wipe data, cache, dalvik, system","3. Flash rom",
+                "4. Flash magisk","5. Reboot","6. Flash dolby from magisk","7. Reboot" ]
+                
+                var tite=document.createElement("h2");
+                var xd=document.createTextNode("How to Install :")
+                tite.appendChild(xd);
+                document.getElementById("guia").appendChild(tite)
+            for(var i=0;i<=6;i++){
+                var element=document.createElement("p");
+                var contenido=document.createTextNode(guias[i]);
+                element.appendChild(contenido);
+                document.getElementById("guia").appendChild(element)
+                var boton=document.getElementById("bt1").disabled=true;
+                
+            }  
 
-        </div>
-            
+            }
+            function guia2(){
+            var guias=["1. Go to twrp","2. Wipe data, cache, dalvik, system","3. Flash rom",
+                "4. Flash magisk","5. Reboot","6. Flash dolby from magisk","7. Reboot" ]
+               
+                var tite=document.createElement("h2");
+                var xd=document.createTextNode("How to Install :")
+                tite.appendChild(xd);
+                document.getElementById("guia2").appendChild(tite)
+            for(var i=0;i<=6;i++){
+                var element=document.createElement("p");
+                var contenido=document.createTextNode(guias[i]);
+                element.appendChild(contenido);
+                document.getElementById("guia2").appendChild(element)
+               
+                var boton2=document.getElementById("bt2").disabled=true;
+            }  
+
+            }
+        </script>    
 
     </section>
 </body>
