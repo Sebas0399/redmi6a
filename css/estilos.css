@@ -34,7 +34,7 @@ nav{
 	justify-content: space-around;
 }
 img{
-	height:300px ;
+	height:200px ;
 	width: auto;
 	margin: auto;
 	display: block;
@@ -55,9 +55,19 @@ img{
 }
 .flex{
 	display: flex;
+	flex-wrap: wrap;
 }
 .text-center{
 	text-align: center;
+}
+.ro{
+	height:100px ;
+	width: auto;
+	margin: auto;
+	display: block;
+	border-radius: 20px;
+	box-shadow: 10px 10px blanchedalmond;
+
 }
 .columna{
 	background: white;
@@ -65,6 +75,18 @@ img{
 	margin: 10px;
 	padding: 10px;
 	border-radius: 10px;
+	width: 40%;
+}
+.btn-descarga{
+	background: grey;
+	display: block;
+	padding: 10px;
+	color: #fff;
+	text-decoration: none;
+	border-radius: 10px;
+}
+.btn-descarga:hover{
+	background: #6174C8;
 }
 @media(max-width:600px){
 	nav{
@@ -79,5 +101,8 @@ img{
 	}
 	.desaparece{
 		display: none;
+	}
+	.columna{
+		width: 100%;
 	}
 }
