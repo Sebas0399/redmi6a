@@ -3,19 +3,21 @@ body{
 }
 #Titulo{
 	color: white;
-	font-size: 60px;
+	font-size: 30px;
 	text-align: center;
+	
 	
 }
 
 #Descripcion{
-	font-size: 30px;
+	font-size: 20px;
 	color: white;
+	
 	text-align: center;
 }
 .nav-enlace{
 	font-size: 20px;
-	background: #5F5755;
+	/*background: #5F5755;*/
 	padding: 10px 30px;
 	display: inline-block;
 	text-decoration: none;
@@ -46,6 +48,23 @@ img{
 	padding: 10px 0px;
 	display: none;
 
+}
+.cont{
+	margin: 0px auto;
+	width: 90%;
+}
+.flex{
+	display: flex;
+}
+.text-center{
+	text-align: center;
+}
+.columna{
+	background: white;
+	border: 1px solid black;
+	margin: 10px;
+	padding: 10px;
+	border-radius: 10px;
 }
 @media(max-width:600px){
 	nav{
