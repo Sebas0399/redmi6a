@@ -1,2 +1,0 @@
-# redmi6a
-xd
