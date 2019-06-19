@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Custom ROM</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <script src="scripts.js"></script>
 </head>
 <body background="Images/3492.jpg">
     <section class="cont flex text-center">
@@ -18,7 +19,17 @@
                 <p>3. Fix Preffered Network Type</p>
                 <p>4. Change Bootanimation</p>
                 <a href="https://www.mediafire.com/file/ch2qcfa45tz4zlb/AospExtended-v5.8-cactus-20190611-1221-UNOFFICIAL-wulan17.zip/file" class="btn-descarga">Descargar</a>
-
+                <button class="btn-descarga" onclick="acc">Guide</button>
+                <div class="guide">
+                    <p class="desapar">How to Install :</p>                  
+                    <p>1. go to twrp</p>
+                    <p>2. wipe data, cache, dalvik, system</p>
+                    <p>3. flash rom</p>
+                    <p>4. flash magisk</p>
+                    <p>5. reboot</p>
+                    <p>6. flash dolby from magisk</p>
+                    <p>7. reboot</p>                                                   
+                </div>
         </div>
         <div class="columna">
                 <h2>Pixel Experience Oreo</h2>
@@ -34,10 +45,16 @@
                 <p>7. Some Underhood Changes</p>
                 <p>8. Included Gaps</p>
                 <a href="https://drive.google.com/file/d/1ypsy60VyN_JdteZOTCJw_syqlEQtIBro/view"class="btn-descarga">Descargar</a>
-                        
+                <button class="btn-descarga">Guide</button>       
             </div>
+            
 
     </section>
+    <script>
+    function acc(){
+        document.getElementsByClassName('guide').innerHTML='x';
+	}
     
+    </script>
 </body>
 </html>

@@ -84,9 +84,13 @@ img{
 	color: #fff;
 	text-decoration: none;
 	border-radius: 10px;
+	
 }
 .btn-descarga:hover{
 	background: #6174C8;
+}
+.guide{
+	display: none;
 }
 @media(max-width:600px){
 	nav{
