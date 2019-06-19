@@ -34,7 +34,7 @@ nav{
 	justify-content: space-around;
 }
 img{
-	height:200px ;
+	height:500px ;
 	width: auto;
 	margin: auto;
 	display: block;
@@ -75,7 +75,7 @@ img{
 	margin: 10px;
 	padding: 10px;
 	border-radius: 10px;
-	width: 40%;
+	
 }
 .btn-descarga{
 	background: grey;
@@ -88,9 +88,6 @@ img{
 }
 .btn-descarga:hover{
 	background: #6174C8;
-}
-.guide{
-	display: none;
 }
 @media(max-width:600px){
 	nav{
