@@ -1,0 +1,172 @@
+---
+export interface Props {
+  title: string;
+  description?: string;
+}
+
+const { title, description = "Development Page" } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{title}</title>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-image: url('/3492.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        #Titulo {
+            color: white;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #Descripcion {
+            font-size: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .nav-enlace {
+            font-size: 20px;
+            padding: 10px 30px;
+            display: inline-block;
+            text-decoration: none;
+            border-radius: 20px;
+            color: white;
+        }
+
+        .nav-enlace:hover {
+            background: #6174C8;
+        }
+
+        nav {
+            padding: 10px;
+            display: flex;
+            justify-content: space-around;
+        }
+
+        img {
+            height: 500px;
+            width: auto;
+            margin: auto;
+            display: block;
+            border-radius: 20px;
+        }
+
+        .nav-button {
+            background: #5F5755;
+            color: #fff;
+            padding: 10px 20px;
+            display: none;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+        }
+
+        .cont {
+            margin: 0px auto;
+            width: 90%;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .ro {
+            height: 100px;
+            width: auto;
+            margin: auto;
+            display: block;
+            border-radius: 20px;
+            box-shadow: 10px 10px blanchedalmond;
+        }
+
+        .columna {
+            background: white;
+            border: 1px solid black;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .btn-descarga {
+            background: grey;
+            display: inline-block;
+            padding: 10px;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 10px;
+            margin: 5px;
+        }
+
+        .btn-descarga:hover {
+            background: #6174C8;
+        }
+
+        button.btn-descarga {
+            border: none;
+            cursor: pointer;
+        }
+
+        @media(max-width:600px) {
+            nav {
+                flex-direction: column;
+            }
+            .nav-enlace {
+                margin: 10px 0px;
+            }
+            .nav-button {
+                display: inline-block;
+            }
+            .desaparece {
+                display: none;
+            }
+            .columna {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 id="Titulo">Redmi 6a</h1>
+    <p id="Descripcion">{description}</p>
+
+    <nav>
+        <button class="nav-button" onclick="accion()">Menú</button>
+        <a href="/" class="nav-enlace desaparece">Home</a>
+        <a href="/roms" class="nav-enlace desaparece">Custom Roms</a>
+        <a href="/gsi" class="nav-enlace desaparece">GSI Roms</a>
+        <a href="/root" class="nav-enlace desaparece">Root</a>
+        <a href="/twrp" class="nav-enlace desaparece">TWRP</a>
+        <a href="https://t.me/Redmi6AOfficial" class="nav-enlace desaparece">Telegram Group</a>
+    </nav>
+
+    <main>
+        <slot />
+    </main>
+
+    <script is:inline>
+        window.accion = function() {
+            var ancla = document.getElementsByClassName('nav-enlace');
+            for (var i = 0; i < ancla.length; i++) {
+                ancla[i].classList.toggle('desaparece');
+            }
+        }
+    </script>
+</body>
+</html>
