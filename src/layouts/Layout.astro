@@ -1,172 +1,110 @@
 ---
 export interface Props {
-  title: string;
-  description?: string;
+    title: string;
+    description?: string;
 }
-
+import "../styles/global.css";
 const { title, description = "Development Page" } = Astro.props;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>{title}</title>
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
-    <style>
-        body {
-            font-family: 'Roboto', sans-serif;
-            background-image: url('/3492.jpg');
-            background-size: cover;
-            background-attachment: fixed;
-        }
+<!doctype html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>{title}</title>
+        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+    </head>
+    <body
+        class="font-sans text-gray-100 bg-gradient-to-br from-gray-900 to-slate-800"
+    >
+        <header class="text-center py-8 backdrop-blur-sm bg-black/30">
+            <h1 id="Titulo" class="text-4xl md:text-5xl font-bold text-white">
+                Poco X3 NFC
+            </h1>
+            <p id="Descripcion" class="text-lg text-gray-300 mt-2">
+                {description}
+            </p>
+        </header>
 
-        #Titulo {
-            color: white;
-            font-size: 30px;
-            text-align: center;
-        }
+        <nav class="bg-gray-800/50 backdrop-blur-md sticky top-0 z-50">
+            <div class="max-w-6xl mx-auto px-4">
+                <div class="flex justify-between">
+                    <!-- Mobile button -->
+                    <div class="md:hidden flex items-center">
+                        <button id="menu-btn" class="text-white py-4 px-2">
+                            <svg
+                                class="w-6 h-6"
+                                xmlns="http://www.w3.org/2000/svg"
+                                fill="none"
+                                viewBox="0 0 24 24"
+                                stroke-width="1.5"
+                                stroke="currentColor"
+                            >
+                                <path
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5"
+                                ></path>
+                            </svg>
+                        </button>
+                    </div>
 
-        #Descripcion {
-            font-size: 20px;
-            color: white;
-            text-align: center;
-        }
+                    <!-- Primary Nav -->
+                    <div
+                        class="hidden md:flex items-center space-x-1 mx-auto"
+                        id="menu"
+                    >
+                        <a
+                            href="/"
+                            class="py-4 px-3 text-gray-200 hover:text-blue-400 transition duration-300"
+                            >Home</a
+                        >
+                        <a
+                            href="/roms"
+                            class="py-4 px-3 text-gray-200 hover:text-blue-400 transition duration-300"
+                            >Custom Roms</a
+                        >
+                        <a
+                            href="/root"
+                            class="py-4 px-3 text-gray-200 hover:text-blue-400 transition duration-300"
+                            >Root</a
+                        >
+                        <a
+                            href="/twrp"
+                            class="py-4 px-3 text-gray-200 hover:text-blue-400 transition duration-300"
+                            >TWRP</a
+                        >
+                        <a
+                            href="https://t.me/PocoX3_Official"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            class="py-4 px-3 text-gray-200 hover:text-blue-400 transition duration-300"
+                            >Telegram Group</a
+                        >
+                    </div>
+                </div>
+            </div>
+        </nav>
 
-        .nav-enlace {
-            font-size: 20px;
-            padding: 10px 30px;
-            display: inline-block;
-            text-decoration: none;
-            border-radius: 20px;
-            color: white;
-        }
+        <main class="py-8">
+            <slot />
+        </main>
 
-        .nav-enlace:hover {
-            background: #6174C8;
-        }
+        <script is:inline>
+            const btn = document.getElementById("menu-btn");
+            const menu = document.getElementById("menu");
 
-        nav {
-            padding: 10px;
-            display: flex;
-            justify-content: space-around;
-        }
-
-        img {
-            height: 500px;
-            width: auto;
-            margin: auto;
-            display: block;
-            border-radius: 20px;
-        }
-
-        .nav-button {
-            background: #5F5755;
-            color: #fff;
-            padding: 10px 20px;
-            display: none;
-            border: none;
-            border-radius: 20px;
-            cursor: pointer;
-        }
-
-        .cont {
-            margin: 0px auto;
-            width: 90%;
-        }
-
-        .flex {
-            display: flex;
-            flex-wrap: wrap;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .ro {
-            height: 100px;
-            width: auto;
-            margin: auto;
-            display: block;
-            border-radius: 20px;
-            box-shadow: 10px 10px blanchedalmond;
-        }
-
-        .columna {
-            background: white;
-            border: 1px solid black;
-            margin: 10px;
-            padding: 10px;
-            border-radius: 10px;
-        }
-
-        .btn-descarga {
-            background: grey;
-            display: inline-block;
-            padding: 10px;
-            color: #fff;
-            text-decoration: none;
-            border-radius: 10px;
-            margin: 5px;
-        }
-
-        .btn-descarga:hover {
-            background: #6174C8;
-        }
-
-        button.btn-descarga {
-            border: none;
-            cursor: pointer;
-        }
-
-        @media(max-width:600px) {
-            nav {
-                flex-direction: column;
-            }
-            .nav-enlace {
-                margin: 10px 0px;
-            }
-            .nav-button {
-                display: inline-block;
-            }
-            .desaparece {
-                display: none;
-            }
-            .columna {
-                width: 100%;
-            }
-        }
-    </style>
-</head>
-<body>
-    <h1 id="Titulo">Redmi 6a</h1>
-    <p id="Descripcion">{description}</p>
-
-    <nav>
-        <button class="nav-button" onclick="accion()">Menú</button>
-        <a href="/" class="nav-enlace desaparece">Home</a>
-        <a href="/roms" class="nav-enlace desaparece">Custom Roms</a>
-        <a href="/gsi" class="nav-enlace desaparece">GSI Roms</a>
-        <a href="/root" class="nav-enlace desaparece">Root</a>
-        <a href="/twrp" class="nav-enlace desaparece">TWRP</a>
-        <a href="https://t.me/Redmi6AOfficial" class="nav-enlace desaparece">Telegram Group</a>
-    </nav>
-
-    <main>
-        <slot />
-    </main>
-
-    <script is:inline>
-        window.accion = function() {
-            var ancla = document.getElementsByClassName('nav-enlace');
-            for (var i = 0; i < ancla.length; i++) {
-                ancla[i].classList.toggle('desaparece');
-            }
-        }
-    </script>
-</body>
+            btn.addEventListener("click", () => {
+                // Toggle 'hidden' on the main menu
+                menu.classList.toggle("hidden");
+                // Flex the menu items for mobile view
+                menu.classList.toggle("flex");
+                menu.classList.toggle("flex-col");
+                menu.classList.toggle("items-center");
+                menu.classList.toggle("pb-4");
+            });
+        </script>
+    </body>
 </html>

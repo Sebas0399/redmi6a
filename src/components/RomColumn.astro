@@ -1,0 +1,48 @@
+---
+export interface Props {
+    title: string;
+    logoSrc: string;
+    logoAlt: string;
+    downloadLink: string;
+    guideId: string;
+    buttonId: string;
+    credits?: string[];
+}
+
+const { 
+    title, 
+    logoSrc, 
+    logoAlt, 
+    downloadLink, 
+    guideId, 
+    buttonId, 
+    credits = [] 
+} = Astro.props;
+---
+<div class="flex-1 min-w-[320px] max-w-md bg-gray-800/60 backdrop-blur-md border border-gray-700 rounded-xl p-6 flex flex-col items-center text-center shadow-lg transition-transform duration-300 hover:transform hover:-translate-y-1">
+    <h2 class="text-2xl font-bold text-blue-400 mb-4">{title}</h2>
+    <img class="w-24 h-24 rounded-full object-cover mb-4 shadow-md" src={logoSrc} alt={logoAlt}>
+    
+    <div class="w-full">
+        <h3 class="text-lg font-semibold mt-4 mb-2">Changelog:</h3>
+        <div class="prose prose-invert prose-sm text-left mx-auto max-w-xs">
+             <slot />
+        </div>
+    </div>
+
+    <div class="flex gap-4 mt-6">
+        <a href={downloadLink} target="_blank" rel="noopener noreferrer" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300">Download</a>
+        <button class="bg-gray-600 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-lg transition-colors duration-300" onclick={`showGuide('${guideId}', '${buttonId}')`} id={buttonId}>Guide</button>
+    </div>
+
+    <div class="guide mt-4 w-full text-left" id={guideId}></div>
+
+    {credits && credits.length > 0 && (
+        <div class="mt-6 border-t border-gray-700 pt-4 w-full">
+            <h3 class="text-lg font-semibold mb-2">Credits</h3>
+            {credits.map((credit) => (
+                <p class="text-gray-400 text-sm">{credit}</p>
+            ))}
+        </div>
+    )}
+</div>
