@@ -14,7 +14,7 @@ const { title, description = "Development Page" } = Astro.props;
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
         <title>{title}</title>
-        <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href={`${import.meta.env.BASE_URL}favicon.ico`} />
     </head>
     <body
         class="font-sans text-gray-100 bg-gradient-to-br from-gray-900 to-slate-800"
@@ -57,22 +57,22 @@ const { title, description = "Development Page" } = Astro.props;
                         id="menu"
                     >
                         <a
-                            href="/"
+                            href={import.meta.env.BASE_URL}
                             class="py-4 px-3 text-gray-200 hover:text-blue-400 transition duration-300"
                             >Home</a
                         >
                         <a
-                            href="/roms"
+                            href={`${import.meta.env.BASE_URL}/roms`}
                             class="py-4 px-3 text-gray-200 hover:text-blue-400 transition duration-300"
                             >Custom Roms</a
                         >
                         <a
-                            href="/root"
+                            href={`${import.meta.env.BASE_URL}/root`}
                             class="py-4 px-3 text-gray-200 hover:text-blue-400 transition duration-300"
                             >Root</a
                         >
                         <a
-                            href="/twrp"
+                            href={`${import.meta.env.BASE_URL}/twrp`}
                             class="py-4 px-3 text-gray-200 hover:text-blue-400 transition duration-300"
                             >TWRP</a
                         >
